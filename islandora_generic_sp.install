@@ -7,11 +7,11 @@
  */
 
 /**
- * Implementation of hook_install.
+ * Implementation of hook_install().
  */
 function islandora_generic_sp_install() {
   module_load_include('inc', 'xml_form_builder', 'XMLFormDatabase');
-  if (!XMLFormDatabase::Exists(ISLANDORA_GENERIC_SP_MODS_FORM_NAME)) { 
+  if (!XMLFormDatabase::Exists(ISLANDORA_GENERIC_SP_MODS_FORM_NAME)) {
     $module_path = drupal_get_path('module', 'islandora_generic_sp');
     $definition = new DOMDocument();
     $definition->load($module_path . '/xml/mods_generic.xml');
@@ -31,8 +31,8 @@ function islandora_generic_sp_install() {
 }
 
 /**
- * Implementation of hook_uninstall.
-*/
+ * Implementation of hook_uninstall().
+ */
 function islandora_generic_sp_uninstall() {
   module_load_include('inc', 'xml_form_builder', 'XMLFormDatabase');
   if (XMLFormDatabase::Exists(ISLANDORA_GENERIC_SP_MODS_FORM_NAME)) {
@@ -42,4 +42,4 @@ function islandora_generic_sp_uninstall() {
   if (!$result) {
     db_query('DELETE FROM {islandora_content_model_forms} WHERE content_model = "%s" and form_name = "%s"', 'islandora:sp_generic', 'Islandora Generic MODS Form');
   }
-} 
+}

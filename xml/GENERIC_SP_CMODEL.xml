@@ -3,6 +3,9 @@
     name="sp_generic"
     xsi:schemaLocation="http://www.islandora.ca http://localhost/islandoracm.xsd">
     <mimetypes><!-- Add more mime types here -->
+        <type>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</type>
+        <type>application/vnd.openxmlformats-officedocument.wordprocessingml.document</type>
+        <type>application/vnd.openxmlformats-officedocument.presentationml.presentation</type>
         <type>application/vnd.oasis.opendocument.database</type>
         <type>application/vnd.oasis.opendocument.graphics</type>
         <type>application/vnd.oasis.opendocument.formula</type>
@@ -647,6 +650,9 @@
     </mimetypes>
     <ingest_rules>
         <rule><!--this list must be the same as the list above -->
+        <applies_to>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</applies_to>
+        <applies_to>application/vnd.openxmlformats-officedocument.wordprocessingml.document</applies_to>
+        <applies_to>application/vnd.openxmlformats-officedocument.presentationml.presentation</applies_to>
         <applies_to>application/vnd.oasis.opendocument.database</applies_to>
         <applies_to>application/vnd.oasis.opendocument.graphics</applies_to>
         <applies_to>application/vnd.oasis.opendocument.formula</applies_to>
