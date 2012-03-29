@@ -4,6 +4,7 @@ define('ISLANDORA_GENERIC_SP_MODS_FORM_NAME', 'ISLANDORA GENERIC MODS FORM');
 
 function islandora_generic_sp_required_fedora_objects() {
   $module_path = drupal_get_path('module', 'islandora_generic_sp');
+  $form_name = 'Islandora Generic MODS Form';
   $form_xml = file_get_contents("$module_path/xml/mods_generic.xml");
   solution_pack_add_form($form_name, $form_xml);
   solution_pack_add_form_association('islandora:sp_generic', $form_name);
